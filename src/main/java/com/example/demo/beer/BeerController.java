@@ -11,6 +11,7 @@ import java.util.stream.Collectors;
 // TODO add complete data: name, description, type, origin, price
 
 @RestController
+
 public class BeerController {
 
     private BeerRepository repository;
@@ -19,7 +20,7 @@ public class BeerController {
         this.repository = repository;
     }
 
-    @GetMapping("/")
+    @GetMapping("/other")
     Collection<Beer> list() {
         return repository.findAll();
     }

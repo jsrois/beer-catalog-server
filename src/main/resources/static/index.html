@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html ng-app="beerStore">
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous">
+    </script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+
+<body ng-controller="StoreController as store">
+<!--  Store Header  -->
+<header>
+    <h1 class="text-center">M&J Beer Catalogue</h1>
+    <p class="text-center subtitle"> A comprehensive beer list with reviews </p>
+</header>
+
+<!--  Products Container  -->
+<div class="list-group">
+    <!--  Product Container  -->
+    <div class="list-group-item" ng-repeat="product in store.products">
+        <p class="product-name">{{product.name}}</p>
+        <!-- Image Gallery  -->
+        <div ng-controller="GalleryController as gallery"  ng-show="product.images.length">
+            <div>
+                <img class="gallery-image" ng-src="{{product.images[gallery.current]}}" />
+            </div>
+
+        </div>
+
+        <div class="product-tabs">
+            <!-- Product Tabs  -->
+            <section ng-controller="TabController as tab">
+                <ul class="nav nav-pills">
+                    <li class="nav-item" ng-class="{ active:tab.isSet(1) }">
+                        <a href ng-click="tab.setTab(1)">Description</a>
+                    </li>
+                    <li ng-class="{ active:tab.isSet(2) }">
+                        <a href ng-click="tab.setTab(2)">Specs</a>
+                    </li>
+                    <li ng-class="{ active:tab.isSet(3) }">
+                        <a href ng-click="tab.setTab(3)">Reviews</a>
+                    </li>
+                </ul>
+
+                <!--  Description Tab's Content  -->
+                <div ng-show="tab.isSet(1)">
+                    {{product.description}}
+                </div>
+
+                <!--  Spec Tab's Content  -->
+                <div ng-show="tab.isSet(2)">
+                    country: {{product.country}}
+                </div>
+
+                <!--  Review Tab's Content  -->
+                <div ng-show="tab.isSet(3)">
+                    No reviews for now
+                </div>
+            </section>
+        </div>
+
+    </div>
+
+</div>
+</body>
+</html>
+
