@@ -11,11 +11,20 @@ class Beer {
     @GeneratedValue
     private Long id;
     private String name;
+    private String description;
+    private String type;
+    private String prize;
+    private String origin;
+
 
     public Beer() {}
 
-    public Beer(String name) {
+    public Beer(String name, String description, String type, String prize, String origin) {
         this.name = name;
+        this.description = description;
+        this.type = type;
+        this.prize = prize;
+        this.origin = origin;
     }
 
 
@@ -23,16 +32,8 @@ class Beer {
         return id;
     }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
-
     public String getName() {
         return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
     @Override
@@ -44,5 +45,20 @@ class Beer {
     }
 
 
+    public String getDescription() {
+        return description;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public String getPrize() {
+        return prize;
+    }
+
+    public String getOrigin() {
+        return origin;
+    }
 }
 

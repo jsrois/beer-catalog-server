@@ -3,7 +3,8 @@ package com.example.demo.beer;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
-import java.util.stream.Stream;
+import java.util.ArrayList;
+import java.util.List;
 
 @Component
 public class BeerCommandLineRunner implements CommandLineRunner{
@@ -17,10 +18,16 @@ public class BeerCommandLineRunner implements CommandLineRunner{
 
     @Override
     public void run(String... strings) throws Exception {
-        Stream.of("Estrella Galicia", "Estrella Damm",
-                "Moritz", "Mahou")
-                .forEach(name -> repository.save(new Beer(name))
-                );
-        repository.findAll().forEach(System.out::println);
+        List<Beer> list = new ArrayList<Beer>() {
+            {
+                add(new Beer("Estrella Galicia", "Probably the best beer in the world","cool","1.26","Galicia"));
+                add(new Beer("Estrella Damm", "Not so good","cool","1.12","Spain (LOL)"));
+                add(new Beer("Heineken", "Meh beer","some type here","1.32","Netherlands"));
+            }
+        };
+
+        for (Beer beer: list) {
+            repository.save(beer);
+        }
     }
 }

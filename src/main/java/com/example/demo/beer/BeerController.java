@@ -8,6 +8,8 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.stream.Collectors;
 
+// TODO add complete data: name, description, type, origin, price
+
 @RestController
 public class BeerController {
 
@@ -30,6 +32,10 @@ public class BeerController {
                     Map<String, String> m = new HashMap<>();
                     m.put("id", b.getId().toString());
                     m.put("name", b.getName());
+                    m.put("description", b.getDescription());
+                    m.put("type", b.getType());
+                    m.put("prize", b.getType());
+                    m.put("origin", b.getOrigin());
                     return m;
                 }).collect(Collectors.toList());
     }
