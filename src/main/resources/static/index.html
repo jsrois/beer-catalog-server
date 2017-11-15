@@ -26,11 +26,8 @@
     <div class="list-group-item" ng-repeat="product in store.products">
         <p class="product-name">{{product.name}}</p>
         <!-- Image Gallery  -->
-        <div ng-controller="GalleryController as gallery"  ng-show="product.images.length">
-            <div>
-                <img class="gallery-image" ng-src="{{product.images[gallery.current]}}" />
-            </div>
-
+        <div>
+            <img class="gallery-image" ng-src="/image/{{ product.imageId }}" />
         </div>
 
         <div class="product-tabs">

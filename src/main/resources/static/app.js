@@ -9,10 +9,6 @@
         });
     });
 
-    app.controller("GalleryController", function(){
-        this.current = 0;
-    });
-
     app.controller("TabController", function(){
         this.current = 1;
         this.setTab = function(number){

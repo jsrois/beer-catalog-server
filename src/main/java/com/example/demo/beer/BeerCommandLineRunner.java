@@ -20,9 +20,9 @@ public class BeerCommandLineRunner implements CommandLineRunner{
     public void run(String... strings) throws Exception {
         List<Beer> list = new ArrayList<Beer>() {
             {
-                add(new Beer("Estrella Galicia", "Probably the best beer in the world","cool","1.26","Galicia"));
-                add(new Beer("Estrella Damm", "Not so good","cool","1.12","Spain (LOL)"));
-                add(new Beer("Heineken", "Meh beer","some type here","1.32","Netherlands"));
+                add(new Beer("Estrella Galicia", "Probably the best beer in the world","cool","1.26","Galicia", "0"));
+                add(new Beer("Estrella Damm", "Not so good","cool","1.12","Spain (LOL)", "1"));
+                add(new Beer("Heineken", "Meh beer","some type here","1.32","Netherlands", "2"));
             }
         };
 

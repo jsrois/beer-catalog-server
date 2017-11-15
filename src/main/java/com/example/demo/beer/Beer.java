@@ -15,16 +15,18 @@ class Beer {
     private String type;
     private String price;
     private String origin;
+    private String imageId;
 
 
     public Beer() {}
 
-    public Beer(String name, String description, String type, String price, String origin) {
+    public Beer(String name, String description, String type, String price, String origin, String imageId) {
         this.name = name;
         this.description = description;
         this.type = type;
         this.price = price;
         this.origin = origin;
+        this.imageId = imageId;
     }
 
 
@@ -35,15 +37,6 @@ class Beer {
     public String getName() {
         return name;
     }
-
-    @Override
-    public String toString() {
-        return "Beer{" +
-                "id=" + id +
-                ", name='" + name + "'" +
-                "}";
-    }
-
 
     public String getDescription() {
         return description;
@@ -59,6 +52,10 @@ class Beer {
 
     public String getOrigin() {
         return origin;
+    }
+
+    public String getImageId() {
+        return imageId;
     }
 }
 
