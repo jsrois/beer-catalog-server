@@ -43,6 +43,11 @@ h1 {
     display: flex;
 }
 
+.specs {
+    display: flex;
+    flex-direction: column;
+}
+
 section {
 
 }

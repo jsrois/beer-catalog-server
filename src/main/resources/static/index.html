@@ -54,8 +54,10 @@
                 </div>
 
                 <!--  Spec Tab's Content  -->
-                <div ng-show="tab.isSet(2)">
-                    country: {{product.country}}
+                <div class="specs" ng-show="tab.isSet(2)">
+                    <span> type: {{ product.type }} </span>
+                    <span> country: {{product.origin}} </span>
+                    <span> price: {{ product.price }} </span>
                 </div>
 
                 <!--  Review Tab's Content  -->
