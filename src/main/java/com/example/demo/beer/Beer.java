@@ -13,17 +13,17 @@ class Beer {
     private String name;
     private String description;
     private String type;
-    private String prize;
+    private String price;
     private String origin;
 
 
     public Beer() {}
 
-    public Beer(String name, String description, String type, String prize, String origin) {
+    public Beer(String name, String description, String type, String price, String origin) {
         this.name = name;
         this.description = description;
         this.type = type;
-        this.prize = prize;
+        this.price = price;
         this.origin = origin;
     }
 
@@ -53,8 +53,8 @@ class Beer {
         return type;
     }
 
-    public String getPrize() {
-        return prize;
+    public String getPrice() {
+        return price;
     }
 
     public String getOrigin() {

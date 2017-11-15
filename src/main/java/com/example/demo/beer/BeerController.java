@@ -35,7 +35,7 @@ public class BeerController {
                     m.put("name", b.getName());
                     m.put("description", b.getDescription());
                     m.put("type", b.getType());
-                    m.put("prize", b.getType());
+                    m.put("price", b.getPrice());
                     m.put("origin", b.getOrigin());
                     return m;
                 }).collect(Collectors.toList());
